@@ -12,8 +12,8 @@ import static org.junit.Assert.assertThat;
 /**
  * @author iwein
  */
-public class SimpleSharingThrottleTest {
-    SimpleSharingThrottle<String> throttle = new SimpleSharingThrottle<String>(
+public class SimpleThrottleTest {
+    SimpleThrottle<String> throttle = new SimpleThrottle<String>(
             mapOf("foo", 10).entry("bar", 10).entry("baz", 10).build()
     );
 

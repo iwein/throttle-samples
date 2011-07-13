@@ -12,11 +12,11 @@ import java.util.concurrent.Semaphore;
 /**
  * @author iwein
  */
-public class SimpleSharingThrottle<T> {
+public class SimpleThrottle<T> implements Throttle<T> {
     private final Map<T, Semaphore> maxConcurrentPerResource;
-    private final Logger log = LoggerFactory.getLogger(SimpleSharingThrottle.class);
+    private final Logger log = LoggerFactory.getLogger(SimpleThrottle.class);
 
-    public SimpleSharingThrottle(Map<T, Integer> maxConcurrentPerResource) {
+    public SimpleThrottle(Map<T, Integer> maxConcurrentPerResource) {
         this.maxConcurrentPerResource = transform(maxConcurrentPerResource);
     }
 
@@ -28,6 +28,7 @@ public class SimpleSharingThrottle<T> {
         return newMap;
     }
 
+    @Override
     public boolean tryAcquire(T resource) {
         Semaphore semaphore = maxConcurrentPerResource.get(resource);
         Assert.state(semaphore != null, "You're trying to acquire a token for an unknown resource.");
@@ -36,6 +37,7 @@ public class SimpleSharingThrottle<T> {
         return semaphore.tryAcquire();
     }
 
+    @Override
     public void release(T resource) {
         Semaphore semaphore = maxConcurrentPerResource.get(resource);
         Assert.state(semaphore != null, "You're trying to release a token for an unknown resource.");

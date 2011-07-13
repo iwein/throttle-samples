@@ -6,7 +6,7 @@
     <artifactId>throttle-samples</artifactId>
     <packaging>jar</packaging>
     <version>0.1-SNAPSHOT</version>
-    <name>testing-messaging</name>
+    <name>throttle-samples</name>
     <properties>
         <junit.version>4.8.2</junit.version>
         <spring.version>3.0.5.RELEASE</spring.version>
@@ -16,6 +16,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>r09</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.integration</groupId>
             <artifactId>spring-integration-core</artifactId>
