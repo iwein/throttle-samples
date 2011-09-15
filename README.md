@@ -1,7 +1,7 @@
-What is frottle
+What is this?
 ===============
 
-Frottle is a collection of examples for throttling in java. Throttling can be useful in systems with high load, like a web application, or middleware.
+A collection of examples for throttling in java. Throttling can be useful in systems with high load, like a web application, or middleware.
 
 What is throttling
 ==================
@@ -13,8 +13,8 @@ Built in behavior in overload scenarios can protect a system from failing badly.
 
 How do I use this
 ==================
-For now just check out the code and look at the testcases. Frottle is more like a set of recipes than a framework. 
+For now just check out the code and look at the testcases. This is more like a set of recipes than a framework. 
 
 License?
 ========
-Meh, licenses are boring. Feel free to copy all you like. I generally like it if you leave the author tags, but I have no intention to enforce anything.
+Meh, licenses are boring. 
